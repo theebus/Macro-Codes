@@ -1,0 +1,16 @@
+Sub removeBlankRows()
+    
+    Dim lastRow As Long
+    Dim i As Long
+    
+    ' Find the last row with data in column A
+    lastRow = Cells(Rows.Count, "A").End(xlUp).Row
+    
+    ' Loop through each row and delete if all cells are blank
+    For i = lastRow To 1 Step -1
+        If WorksheetFunction.CountA(Rows(i)) = 0 Then
+            Rows(i).Delete
+        End If
+    Next i
+    
+End Sub

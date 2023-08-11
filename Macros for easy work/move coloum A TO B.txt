@@ -1,0 +1,25 @@
+Sub Macro1()
+'
+' Macro1 Macro
+'
+' Keyboard Shortcut: Ctrl+b
+'
+    Range("B2").Select
+    Selection.Cut Destination:=Range("A2")
+    Range("B4").Select
+    Selection.Cut Destination:=Range("A4")
+    Range("B6").Select
+    Selection.Cut Destination:=Range("A6")
+    Range("A6").Select
+
+Sub MoveColumnBtoA()
+    Dim rowCount As Integer
+    rowCount = 3000   ' Specify the number of rows as per your requirement
+  
+    For i = 2 To rowCount Step 2   ' Assuming your data starts at A2
+  
+        Range("B" & i).Cut Destination:=Range("A" & i)
+          
+    Next i
+
+End Sub

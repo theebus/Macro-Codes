@@ -1,0 +1,15 @@
+Sub removeNegativeNumbers()
+    Dim myRange As Range
+    Dim cell As Range
+    
+    ' Set the range to remove negative numbers and replace with 0
+    Set myRange = Range("A1:A1743") ' Change this to your desired range
+    
+    ' Loop through each cell in the range and replace negative numbers with 0
+    For Each cell In myRange.Cells
+        If cell.Value < 0 Then
+            cell.Value = 0
+        End If
+    Next cell
+    
+End Sub

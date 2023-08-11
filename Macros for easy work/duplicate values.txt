@@ -1,0 +1,16 @@
+Sub duplicateData()
+    
+    Dim lastRow As Long
+    Dim i As Integer
+    
+    ' Find the last row with data in column A
+    lastRow = Cells(Rows.Count, "A").End(xlUp).Row
+    
+    ' Loop through each row and copy the data to the next row
+    For i = lastRow To 1 Step -1
+        Rows(i).Copy
+        Rows(i + 1).Insert Shift:=xlDown
+        Application.CutCopyMode = False
+    Next i
+    
+End Sub

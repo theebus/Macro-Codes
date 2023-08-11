@@ -1,0 +1,16 @@
+Sub addUnderscoreTwoToAlternateRows()
+    Dim myRange As Range
+    Dim cell As Range
+    Dim i As Long
+    
+    ' Set the range to add "_2" to each cell in every other row
+    Set myRange = Range("A1:A1742") ' Change this to your desired range
+    
+    ' Loop through each row in the range and add "_2" to the cells in alternate rows
+    For Each cell In myRange.Cells
+        If cell.Row Mod 2 = 0 Then
+            cell.Value = cell.Value & "_2"
+        End If
+    Next cell
+    
+End Sub
